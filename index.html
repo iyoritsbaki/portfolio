@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - [黄泉の国]</title>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* カラーパレットと基本設定 */
+        :root {
+            --primary-blue: #007BFF; /* メインカラー（青） */
+            --secondary-blue: #0056b3; /* ホバー用（濃い青） */
+            --text-dark: #212529;    /* テキスト（濃いグレー） */
+            --text-light: #6c757d;   /* サブテキスト（薄いグレー） */
+            --bg-light: #f8f9fa;     /* セクション背景（非常に薄いグレー） */
+            --bg-white: #ffffff;     /* 主要背景（白） */
+            --font-main: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* 全体スタイル */
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* ヘッダー/ナビゲーション */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* セクション共通スタイル */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* 自己紹介セクション */
+        #introduction {
+            background-color: var(--bg-white);
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+
+        .profile-icon {
+            font-size: 4rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        #introduction h1 {
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        #introduction p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+        }
+
+        /* ガクチカセクション */
+        #gacuchika {
+            background-color: var(--bg-light);
+        }
+
+        .gacuchika-content {
+            background-color: var(--bg-white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .gacuchika-content h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-blue);
+            margin-top: 0;
+            border-left: 5px solid var(--primary-blue);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .gacuchika-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        /* フッター */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--bg-light);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        /* レスポンシブデザイン（モバイル対応） */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            #introduction h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .gacuchika-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#introduction" class="logo">My Portfolio</a>
+                <ul>
+                    <li><a href="#introduction">自己紹介</a></li>
+                    <li><a href="#gacuchika">ガクチカ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 自己紹介セクション -->
+        <section id="introduction">
+            <div class="container">
+                <!-- 外部画像不使用のためFontAwesomeアイコンで代用 -->
+                <i class="fas fa-user-circle profile-icon" aria-hidden="true"></i>
+                <h1>黄泉の国</h1>
+                <p>日本大学 理工学部 〇年生</p>
+                <p>目標達成に向けた粘り強い行動力を強みとする情報系学生。</p>
+            </div>
+        </section>
+
+        <!-- ガクチカセクション -->
+        <section id="gacuchika">
+            <div class="container">
+                <div style="text-align: center;">
+                    <h2 class="section-title">学生時代に力を入れたこと (ガクチカ)</h2>
+                </div>
+                
+                <div class="gacuchika-content">
+                    <h3><i class="fas fa-book-open" style="margin-right: 10px;"></i>知識ゼロからの海外小説読破</h3>
+                    
+                    <p>
+                        私が学生時代に力を入れたのは、中国語の知識ゼロから海外小説を読破した経験です。
+                        好きな中国アニメの続きを原作小説で読みたかったのですが、日本語訳が出ていませんでした。
+                        そこで、<span class="highlight">「自力で翻訳し、最後まで完読する」ことを目標に設定</span>しました。
+                        これは同時に中国語の読解力を高めるための重要な課題となりました。
+                    </p>
+
+                    <p>
+                        **【行動（Action）】**
+                        基本的な文法を独学した後、辞書で一つ一つ丁寧に調べながら翻訳を進めました。
+                        ただ意味を追うだけでなく、できる限り原文の持つニュアンスや雰囲気を損なわないよう工夫し、文脈全体から意味を推測する訓練を意識的に行いました。この地道な作業を毎日継続しました。
+                    </p>
+                    
+                    <p>
+                        **【結果と学び（Result）】**
+                        約6ヶ月の努力の結果、小説を無事に読破することができました。
+                        この取り組みにより、専門的な表現も理解できる中国語の読解力が飛躍的に向上しました。
+                        この経験から、<span class="highlight">目標達成のために必要な粘り強い努力の姿勢と、未知の課題に対して主体的に解決策を見つけ出す能力</span>を培ったと確信しています。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <p>Copyright &copy; 2024 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
